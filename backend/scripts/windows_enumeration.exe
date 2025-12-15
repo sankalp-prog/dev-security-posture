@@ -1,0 +1,12 @@
+DUMMY WINDOWS EXECUTABLE
+========================
+
+This is a placeholder file for the Windows enumeration script.
+In production, this would be an actual .exe file that:
+
+1. Collects installed applications
+2. Gathers network configuration
+3. Gets MAC address and system info
+4. POSTs data back to the server at /api/help-download/postData
+
+Replace this file with the actual compiled Windows executable.
