@@ -1,0 +1,1109 @@
+[
+  {
+    "addresses": {
+      "mac_address": "06:dc:3d:f0:26:ab",
+      "last_updated_timestamp": 1765803346
+    },
+    "services": [
+      {
+        "Name": "application.com.knollsoft.Rectangle.817631.817895",
+        "DisplayName": "application.com.knollsoft.Rectangle.817631.817895",
+        "ProcessId": 577,
+        "StartMode": "Unknown",
+        "PathName": "/Applications/Rectangle.app/Contents/MacOS/Rectangle"
+      },
+      {
+        "Name": "com.apple.Finder",
+        "DisplayName": "com.apple.Finder",
+        "ProcessId": 426,
+        "StartMode": "Manual",
+        "PathName": "/System/Library/CoreServices/Finder.app/Contents/MacOS/Finder"
+      },
+      {
+        "Name": "com.apple.mediaremoteagent",
+        "DisplayName": "com.apple.mediaremoteagent",
+        "ProcessId": 1036,
+        "StartMode": "Manual",
+        "PathName": "/System/Library/PrivateFrameworks/MediaRemote.framework/Support/mediaremoteagent"
+      },
+      {
+        "Name": "com.apple.FontWorker",
+        "DisplayName": "com.apple.FontWorker",
+        "ProcessId": 469,
+        "StartMode": "Manual",
+        "PathName": "/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ATS.framework/Versions/A/Support/fontworker"
+      },
+      {
+        "Name": "com.apple.bird",
+        "DisplayName": "com.apple.bird",
+        "ProcessId": 74577,
+        "StartMode": "Manual",
+        "PathName": "/System/Library/PrivateFrameworks/iCloudDriveCore.framework/Versions/A/Support/bird"
+      },
+      {
+        "Name": "com.apple.universalaccessAuthWarn",
+        "DisplayName": "com.apple.universalaccessAuthWarn",
+        "ProcessId": 1057,
+        "StartMode": "Manual",
+        "PathName": "/System/Library/PrivateFrameworks/UniversalAccess.framework/Versions/A/Resources/universalAccessAuthWarn.app/Contents/MacOS/universalAccessAuthWarn"
+      },
+      {
+        "Name": "com.apple.nsurlsessiond",
+        "DisplayName": "com.apple.nsurlsessiond_privileged",
+        "ProcessId": 422,
+        "StartMode": "Manual",
+        "PathName": "/usr/libexec/nsurlsessiond"
+      },
+      {
+        "Name": "com.apple.SafariBookmarksSyncAgent",
+        "DisplayName": "com.apple.SafariBookmarksSyncAgent",
+        "ProcessId": 74614,
+        "StartMode": "Manual",
+        "PathName": "/System/Cryptexes/App/System/Library/CoreServices/SafariSupport.bundle/Contents/MacOS/SafariBookmarksSyncAgent"
+      },
+      {
+        "Name": "com.apple.wallpaper.agent",
+        "DisplayName": "com.apple.wallpaper.agent",
+        "ProcessId": 445,
+        "StartMode": "Unknown",
+        "PathName": "/System/Library/CoreServices/WallpaperAgent.app/Contents/MacOS/WallpaperAgent"
+      },
+      {
+        "Name": "com.apple.commerce",
+        "DisplayName": "com.apple.commerce",
+        "ProcessId": 516,
+        "StartMode": "Manual",
+        "PathName": "/System/Library/PrivateFrameworks/CommerceKit.framework/Versions/A/Resources/commerce"
+      },
+      {
+        "Name": "application.jacklandrin.OnlySwitch.21333696.21333842",
+        "DisplayName": "application.jacklandrin.OnlySwitch.21333696.21333842",
+        "ProcessId": 583,
+        "StartMode": "Unknown",
+        "PathName": "/Applications/Only Switch.app/Contents/MacOS/OnlySwitch"
+      },
+      {
+        "Name": "com.apple.ManagedSettingsAgent",
+        "DisplayName": "com.apple.ManagedSettingsAgent",
+        "ProcessId": 74563,
+        "StartMode": "Manual",
+        "PathName": "/System/Library/Frameworks/ManagedSettings.framework/Versions/A/ManagedSettingsAgent"
+      },
+      {
+        "Name": "com.apple.photolibraryd",
+        "DisplayName": "com.apple.photolibraryd",
+        "ProcessId": 74648,
+        "StartMode": "Manual",
+        "PathName": "/System/Library/PrivateFrameworks/PhotoLibraryServices.framework/Versions/A/Support/photolibraryd"
+      },
+      {
+        "Name": "application.com.raycast.macos.935706.21311082",
+        "DisplayName": "application.com.raycast.macos.935706.21311082",
+        "ProcessId": 524,
+        "StartMode": "Unknown",
+        "PathName": "/Applications/Raycast.app/Contents/MacOS/Raycast"
+      },
+      {
+        "Name": "com.apple.TextInputMenuAgent",
+        "DisplayName": "com.apple.TextInputMenuAgent",
+        "ProcessId": 567,
+        "StartMode": "Automatic",
+        "PathName": "/System/Library/CoreServices/TextInputMenuAgent.app/Contents/MacOS/TextInputMenuAgent"
+      },
+      {
+        "Name": "com.apple.CommCenter",
+        "DisplayName": "com.apple.CommCenter",
+        "ProcessId": 74616,
+        "StartMode": "Unknown",
+        "PathName": "/System/Library/Frameworks/CoreTelephony.framework/Support/CommCenter"
+      },
+      {
+        "Name": "com.apple.trustd.agent",
+        "DisplayName": "com.apple.trustd.agent",
+        "ProcessId": 437,
+        "StartMode": "Manual",
+        "PathName": "/usr/libexec/trustd"
+      },
+      {
+        "Name": "com.apple.cfprefsd.xpc.agent",
+        "DisplayName": "com.apple.cfprefsd.xpc.agent",
+        "ProcessId": 399,
+        "StartMode": "Manual",
+        "PathName": "/usr/sbin/cfprefsd"
+      },
+      {
+        "Name": "homebrew.mxcl.redis@6.2",
+        "DisplayName": "homebrew.mxcl.redis@6.2",
+        "ProcessId": 546,
+        "StartMode": "Automatic",
+        "PathName": "/opt/homebrew/opt/redis@6.2/bin/redis-server"
+      },
+      {
+        "Name": "com.apple.peopled",
+        "DisplayName": "com.apple.peopled",
+        "ProcessId": 12527,
+        "StartMode": "Manual",
+        "PathName": "/System/Library/PrivateFrameworks/People.framework/peopled"
+      },
+      {
+        "Name": "com.apple.replicatord",
+        "DisplayName": "com.apple.replicatord",
+        "ProcessId": 74605,
+        "StartMode": "Manual",
+        "PathName": "/System/Library/PrivateFrameworks/ReplicatorCore.framework/Support/replicatord"
+      },
+      {
+        "Name": "com.apple.keyboardservicesd",
+        "DisplayName": "com.apple.keyboardservicesd",
+        "ProcessId": 12790,
+        "StartMode": "Manual",
+        "PathName": "/usr/libexec/keyboardservicesd"
+      },
+      {
+        "Name": "com.apple.accessibility.axassetsd",
+        "DisplayName": "com.apple.accessibility.axassetsd",
+        "ProcessId": 80957,
+        "StartMode": "Automatic",
+        "PathName": "/System/Library/PrivateFrameworks/AXAssetLoader.framework/Support/axassetsd"
+      },
+      {
+        "Name": "com.apple.quicklook.ThumbnailsAgent",
+        "DisplayName": "com.apple.quicklook.ThumbnailsAgent",
+        "ProcessId": 74640,
+        "StartMode": "Manual",
+        "PathName": "/System/Library/Frameworks/QuickLookThumbnailing.framework/Support/com.apple.quicklook.ThumbnailsAgent"
+      },
+      {
+        "Name": "com.apple.Safari.PasswordBreachAgent",
+        "DisplayName": "com.apple.Safari.PasswordBreachAgent",
+        "ProcessId": 30295,
+        "StartMode": "Manual",
+        "PathName": "/System/Cryptexes/App/usr/libexec/PasswordBreachAgent"
+      },
+      {
+        "Name": "com.apple.WindowManager.agent",
+        "DisplayName": "com.apple.WindowManager.agent",
+        "ProcessId": 416,
+        "StartMode": "Unknown",
+        "PathName": "/System/Library/CoreServices/WindowManager.app/Contents/MacOS/WindowManager"
+      },
+      {
+        "Name": "com.apple.ContextStoreAgent",
+        "DisplayName": "com.apple.ContextStoreAgent",
+        "ProcessId": 44461,
+        "StartMode": "Automatic",
+        "PathName": "/System/Library/PrivateFrameworks/CoreDuetContext.framework/Resources/ContextStoreAgent"
+      },
+      {
+        "Name": "com.apple.applespell",
+        "DisplayName": "com.apple.applespell",
+        "ProcessId": 1249,
+        "StartMode": "Manual",
+        "PathName": "/System/Library/Services/AppleSpell.service/Contents/MacOS/AppleSpell"
+      },
+      {
+        "Name": "com.apple.Safari.SafeBrowsing.Service",
+        "DisplayName": "com.apple.Safari.SafeBrowsing.Service",
+        "ProcessId": 28762,
+        "StartMode": "Manual",
+        "PathName": "/System/Library/PrivateFrameworks/SafariSafeBrowsing.framework/com.apple.Safari.SafeBrowsing.Service"
+      },
+      {
+        "Name": "com.apple.cloudd",
+        "DisplayName": "com.apple.cloudd",
+        "ProcessId": 434,
+        "StartMode": "Manual",
+        "PathName": "/System/Library/PrivateFrameworks/CloudKitDaemon.framework/Support/cloudd"
+      },
+      {
+        "Name": "com.apple.UserNotificationCenterAgent",
+        "DisplayName": "com.apple.UserNotificationCenterAgent",
+        "ProcessId": 11597,
+        "StartMode": "Manual",
+        "PathName": "/System/Library/CoreServices/UserNotificationCenter.app/Contents/MacOS/UserNotificationCenter"
+      },
+      {
+        "Name": "com.apple.cmfsyncagent",
+        "DisplayName": "com.apple.cmfsyncagent",
+        "ProcessId": 74590,
+        "StartMode": "Manual",
+        "PathName": "/System/Library/PrivateFrameworks/CommunicationsFilter.framework/CMFSyncAgent"
+      },
+      {
+        "Name": "com.apple.diagnostics_agent",
+        "DisplayName": "com.apple.diagnostics_agent",
+        "ProcessId": 566,
+        "StartMode": "Automatic",
+        "PathName": "/System/Library/CoreServices/diagnostics_agent"
+      },
+      {
+        "Name": "com.cron.electron.ShipIt",
+        "DisplayName": "com.cron.electron.ShipIt",
+        "ProcessId": 17762,
+        "StartMode": "Unknown",
+        "PathName": "/Applications/Notion Calendar.app/Contents/Frameworks/Squirrel.framework/Resources/ShipIt"
+      },
+      {
+        "Name": "com.apple.networkserviceproxy",
+        "DisplayName": "com.apple.networkserviceproxy",
+        "ProcessId": 74617,
+        "StartMode": "Unknown",
+        "PathName": "/usr/libexec/networkserviceproxy"
+      },
+      {
+        "Name": "com.apple.controlcenter",
+        "DisplayName": "com.apple.controlcenter",
+        "ProcessId": 419,
+        "StartMode": "Manual",
+        "PathName": "/System/Library/CoreServices/ControlCenter.app/Contents/MacOS/ControlCenter"
+      },
+      {
+        "Name": "com.openssh.ssh-agent",
+        "DisplayName": "com.openssh.ssh-agent",
+        "ProcessId": 10489,
+        "StartMode": "Manual",
+        "PathName": "/usr/bin/ssh-agent"
+      },
+      {
+        "Name": "com.apple.ctkd",
+        "DisplayName": "com.apple.ctkd",
+        "ProcessId": 74601,
+        "StartMode": "Manual",
+        "PathName": "/System/Library/Frameworks/CryptoTokenKit.framework/ctkd"
+      },
+      {
+        "Name": "com.apple.secinitd",
+        "DisplayName": "com.apple.secinitd",
+        "ProcessId": 74266,
+        "StartMode": "Manual",
+        "PathName": "/usr/libexec/secinitd"
+      },
+      {
+        "Name": "application.md.obsidian.7878398.7878407",
+        "DisplayName": "application.md.obsidian.7878398.7878407",
+        "ProcessId": 13523,
+        "StartMode": "Unknown",
+        "PathName": "/Applications/Obsidian.app/Contents/MacOS/Obsidian"
+      },
+      {
+        "Name": "com.apple.synapse.contentlinkingd",
+        "DisplayName": "com.apple.synapse.contentlinkingd",
+        "ProcessId": 46749,
+        "StartMode": "Manual",
+        "PathName": "/System/Library/PrivateFrameworks/Synapse.framework/Support/contentlinkingd"
+      },
+      {
+        "Name": "application.net.whatsapp.WhatsApp.21380803.21380809",
+        "DisplayName": "application.net.whatsapp.WhatsApp.21380803.21380809",
+        "ProcessId": 12247,
+        "StartMode": "Unknown",
+        "PathName": "/Applications/WhatsApp.app/Contents/MacOS/WhatsApp"
+      },
+      {
+        "Name": "com.apple.triald",
+        "DisplayName": "com.apple.triald",
+        "ProcessId": 74653,
+        "StartMode": "Manual",
+        "PathName": "/usr/libexec/triald"
+      },
+      {
+        "Name": "com.apple.tccd",
+        "DisplayName": "com.apple.tccd",
+        "ProcessId": 29807,
+        "StartMode": "Manual",
+        "PathName": "/System/Library/PrivateFrameworks/TCC.framework/Support/tccd"
+      },
+      {
+        "Name": "com.apple.StatusKitAgent",
+        "DisplayName": "com.apple.StatusKitAgent",
+        "ProcessId": 514,
+        "StartMode": "Manual",
+        "PathName": "/System/Library/PrivateFrameworks/StatusKit.framework/StatusKitAgent"
+      },
+      {
+        "Name": "com.apple.replayd",
+        "DisplayName": "com.apple.replayd",
+        "ProcessId": 473,
+        "StartMode": "Manual",
+        "PathName": "/usr/libexec/replayd"
+      },
+      {
+        "Name": "com.apple.coreservices.uiagent",
+        "DisplayName": "com.apple.coreservices.uiagent",
+        "ProcessId": 74674,
+        "StartMode": "Manual",
+        "PathName": "/System/Library/CoreServices/CoreServicesUIAgent.app/Contents/MacOS/CoreServicesUIAgent"
+      },
+      {
+        "Name": "com.apple.icloud.searchpartyuseragent",
+        "DisplayName": "com.apple.icloud.searchpartyuseragent",
+        "ProcessId": 74596,
+        "StartMode": "Manual",
+        "PathName": "/usr/libexec/searchpartyuseragent"
+      },
+      {
+        "Name": "com.apple.liveactivitiesd",
+        "DisplayName": "com.apple.liveactivitiesd",
+        "ProcessId": 74604,
+        "StartMode": "Manual",
+        "PathName": "/System/Library/PrivateFrameworks/SessionCore.framework/Support/liveactivitiesd"
+      },
+      {
+        "Name": "com.apple.akd",
+        "DisplayName": "com.apple.akd",
+        "ProcessId": 589,
+        "StartMode": "Manual",
+        "PathName": "/System/Library/PrivateFrameworks/AuthKit.framework/Versions/A/Support/akd"
+      },
+      {
+        "Name": "com.apple.cmio.ContinuityCaptureAgent",
+        "DisplayName": "com.apple.cmio.ContinuityCaptureAgent",
+        "ProcessId": 405,
+        "StartMode": "Manual",
+        "PathName": "/usr/libexec/ContinuityCaptureAgent"
+      },
+      {
+        "Name": "net.whatsapp.WhatsApp-sparkle-updater",
+        "DisplayName": "net.whatsapp.WhatsApp-sparkle-updater",
+        "ProcessId": 12276,
+        "StartMode": "Unknown",
+        "PathName": "/Applications/WhatsApp.app/Contents/Frameworks/WAAppKitBridge.framework/Versions/A/PlugIns/MacPlugin.bundle/Contents/Frameworks/Sparkle.framework/Versions/B/Autoupdate"
+      },
+      {
+        "Name": "com.microsoft.VSCode.ShipIt",
+        "DisplayName": "com.microsoft.VSCode.ShipIt",
+        "ProcessId": 1936,
+        "StartMode": "Unknown",
+        "PathName": "/Applications/Visual Studio Code.app/Contents/Frameworks/Squirrel.framework/Resources/ShipIt"
+      },
+      {
+        "Name": "com.apple.storeuid",
+        "DisplayName": "com.apple.storeuid",
+        "ProcessId": 25483,
+        "StartMode": "Manual",
+        "PathName": "/System/Library/PrivateFrameworks/CommerceKit.framework/Versions/A/Resources/storeuid.app/Contents/MacOS/storeuid"
+      },
+      {
+        "Name": "com.apple.rcd",
+        "DisplayName": "com.apple.rcd",
+        "ProcessId": 46683,
+        "StartMode": "Manual",
+        "PathName": "/System/Library/CoreServices/rcd.app/Contents/MacOS/rcd"
+      },
+      {
+        "Name": "com.apple.CryptoTokenKit.ahp.agent",
+        "DisplayName": "com.apple.CryptoTokenKit.ahp.agent",
+        "ProcessId": 486,
+        "StartMode": "Manual",
+        "PathName": "/System/Library/Frameworks/CryptoTokenKit.framework/ctkahp.bundle/Contents/MacOS/ctkahp"
+      },
+      {
+        "Name": "application.com.spotify.client.22657879.22658544",
+        "DisplayName": "application.com.spotify.client.22657879.22658544",
+        "ProcessId": 30798,
+        "StartMode": "Unknown",
+        "PathName": "/Applications/Spotify.app/Contents/MacOS/Spotify"
+      },
+      {
+        "Name": "com.apple.remindd",
+        "DisplayName": "com.apple.remindd",
+        "ProcessId": 74589,
+        "StartMode": "Automatic",
+        "PathName": "/usr/libexec/remindd"
+      },
+      {
+        "Name": "com.apple.duetexpertd",
+        "DisplayName": "com.apple.duetexpertd",
+        "ProcessId": 81118,
+        "StartMode": "Manual",
+        "PathName": "/usr/libexec/duetexpertd"
+      },
+      {
+        "Name": "com.apple.coreservices.useractivityd",
+        "DisplayName": "com.apple.coreservices.useractivityd",
+        "ProcessId": 499,
+        "StartMode": "Manual",
+        "PathName": "/System/Library/PrivateFrameworks/UserActivity.framework/Agents/useractivityd"
+      },
+      {
+        "Name": "com.apple.ViewBridgeAuxiliary",
+        "DisplayName": "com.apple.ViewBridgeAuxiliary",
+        "ProcessId": 474,
+        "StartMode": "Unknown",
+        "PathName": "/System/Library/PrivateFrameworks/ViewBridge.framework/Versions/A/XPCServices/ViewBridgeAuxiliary.xpc/Contents/MacOS/ViewBridgeAuxiliary"
+      },
+      {
+        "Name": "com.apple.lsd",
+        "DisplayName": "com.apple.lsd",
+        "ProcessId": 414,
+        "StartMode": "Manual",
+        "PathName": "/usr/libexec/lsd"
+      },
+      {
+        "Name": "com.apple.pluginkit.pkd",
+        "DisplayName": "com.apple.pluginkit.pkd",
+        "ProcessId": 46461,
+        "StartMode": "Manual",
+        "PathName": "/usr/libexec/pkd"
+      },
+      {
+        "Name": "com.apple.cache_delete",
+        "DisplayName": "com.apple.cache_delete",
+        "ProcessId": 74579,
+        "StartMode": "Manual",
+        "PathName": "/System/Library/PrivateFrameworks/CacheDelete.framework/deleted"
+      },
+      {
+        "Name": "com.apple.AMPDeviceDiscoveryAgent",
+        "DisplayName": "com.apple.AMPDeviceDiscoveryAgent",
+        "ProcessId": 460,
+        "StartMode": "Manual",
+        "PathName": "/System/Library/PrivateFrameworks/AMPDevices.framework/Versions/A/Support/AMPDeviceDiscoveryAgent"
+      },
+      {
+        "Name": "com.apple.Dock.agent",
+        "DisplayName": "com.apple.Dock.agent",
+        "ProcessId": 418,
+        "StartMode": "Unknown",
+        "PathName": "/System/Library/CoreServices/Dock.app/Contents/MacOS/Dock"
+      },
+      {
+        "Name": "com.apple.mbuseragent",
+        "DisplayName": "com.apple.mbuseragent",
+        "ProcessId": 38890,
+        "StartMode": "Manual",
+        "PathName": "/System/Library/CoreServices/Setup Assistant.app/Contents/Resources/mbuseragent"
+      },
+      {
+        "Name": "com.apple.UserEventAgent-Aqua",
+        "DisplayName": "com.apple.UserEventAgent-Aqua",
+        "ProcessId": 400,
+        "StartMode": "Automatic",
+        "PathName": "/usr/libexec/UserEventAgent"
+      },
+      {
+        "Name": "com.apple.identityservicesd",
+        "DisplayName": "com.apple.identityservicesd",
+        "ProcessId": 463,
+        "StartMode": "Manual",
+        "PathName": "/System/Library/PrivateFrameworks/IDS.framework/identityservicesd.app/Contents/MacOS/identityservicesd"
+      },
+      {
+        "Name": "com.apple.telephonyutilities.callservicesd",
+        "DisplayName": "com.apple.telephonyutilities.callservicesd",
+        "ProcessId": 74555,
+        "StartMode": "Manual",
+        "PathName": "/System/Library/PrivateFrameworks/TelephonyUtilities.framework/callservicesd"
+      },
+      {
+        "Name": "application.com.dwarvesv.minimalbar.841155.841265",
+        "DisplayName": "application.com.dwarvesv.minimalbar.841155.841265",
+        "ProcessId": 586,
+        "StartMode": "Unknown",
+        "PathName": "/Applications/Hidden Bar.app/Contents/MacOS/Hidden Bar"
+      },
+      {
+        "Name": "com.apple.security.DiskUnmountWatcher",
+        "DisplayName": "com.apple.security.DiskUnmountWatcher",
+        "ProcessId": 25631,
+        "StartMode": "Manual",
+        "PathName": "/System/Library/PrivateFrameworks/KerberosHelper/Helpers/DiskUnmountWatcher"
+      },
+      {
+        "Name": "com.apple.CoreLocationAgent",
+        "DisplayName": "com.apple.CoreLocationAgent",
+        "ProcessId": 74554,
+        "StartMode": "Manual",
+        "PathName": "/System/Library/CoreServices/CoreLocationAgent.app/Contents/MacOS/CoreLocationAgent"
+      },
+      {
+        "Name": "application.eu.exelban.Stats.21308593.21308969",
+        "DisplayName": "application.eu.exelban.Stats.21308593.21308969",
+        "ProcessId": 571,
+        "StartMode": "Unknown",
+        "PathName": "/Applications/Stats.app/Contents/MacOS/Stats"
+      },
+      {
+        "Name": "com.apple.intelligenceflowd",
+        "DisplayName": "com.apple.intelligenceflowd",
+        "ProcessId": 74611,
+        "StartMode": "Manual",
+        "PathName": "/System/Library/PrivateFrameworks/IntelligenceFlowRuntime.framework/Versions/A/intelligenceflowd"
+      },
+      {
+        "Name": "com.apple.businessservicesd",
+        "DisplayName": "com.apple.businessservicesd",
+        "ProcessId": 74608,
+        "StartMode": "Manual",
+        "PathName": "/System/Library/PrivateFrameworks/BusinessChatService.framework/businessservicesd"
+      },
+      {
+        "Name": "com.apple.feedbackd",
+        "DisplayName": "com.apple.feedbackd",
+        "ProcessId": 74612,
+        "StartMode": "Manual",
+        "PathName": "/usr/libexec/feedbackd"
+      },
+      {
+        "Name": "com.apple.BTServer.cloudpairing",
+        "DisplayName": "com.apple.BTServer.cloudpairing",
+        "ProcessId": 30952,
+        "StartMode": "Unknown",
+        "PathName": "/System/Library/CoreServices/audioaccessoryd"
+      },
+      {
+        "Name": "com.apple.coreservices.sharedfilelistd",
+        "DisplayName": "com.apple.coreservices.sharedfilelistd",
+        "ProcessId": 456,
+        "StartMode": "Manual",
+        "PathName": "/System/Library/CoreServices/sharedfilelistd"
+      },
+      {
+        "Name": "com.apple.pboard",
+        "DisplayName": "com.apple.pboard",
+        "ProcessId": 412,
+        "StartMode": "Manual",
+        "PathName": "/usr/libexec/pboard"
+      },
+      {
+        "Name": "com.apple.rapportd",
+        "DisplayName": "com.apple.rapportd",
+        "ProcessId": 425,
+        "StartMode": "Manual",
+        "PathName": "/usr/libexec/rapportd"
+      },
+      {
+        "Name": "com.apple.TextInputUI.xpc.CursorUIViewService",
+        "DisplayName": "com.apple.TextInputUI.xpc.CursorUIViewService",
+        "ProcessId": 495,
+        "StartMode": "Unknown",
+        "PathName": "/System/Library/PrivateFrameworks/TextInputUIMacHelper.framework/Versions/A/XPCServices/CursorUIViewService.xpc/Contents/MacOS/CursorUIViewService"
+      },
+      {
+        "Name": "com.apple.containermanagerd",
+        "DisplayName": "com.apple.containermanagerd",
+        "ProcessId": 410,
+        "StartMode": "Manual",
+        "PathName": "/usr/libexec/containermanagerd"
+      },
+      {
+        "Name": "com.apple.neagent.878568F8-CCE5-4157-8315-22F20DC8FB0A",
+        "DisplayName": "com.apple.neagent.878568F8-CCE5-4157-8315-22F20DC8FB0A",
+        "ProcessId": 74258,
+        "StartMode": "Unknown",
+        "PathName": "/usr/libexec/neagent"
+      },
+      {
+        "Name": "com.apple.managedappdistributionagent",
+        "DisplayName": "com.apple.managedappdistributionagent",
+        "ProcessId": 5394,
+        "StartMode": "Manual",
+        "PathName": "/System/Library/Frameworks/ManagedAppDistribution.framework/Support/managedappdistributionagent"
+      },
+      {
+        "Name": "com.apple.accountsd",
+        "DisplayName": "com.apple.accountsd",
+        "ProcessId": 28899,
+        "StartMode": "Manual",
+        "PathName": "/System/Library/Frameworks/Accounts.framework/Versions/A/Support/accountsd"
+      },
+      {
+        "Name": "com.apple.routined",
+        "DisplayName": "com.apple.routined",
+        "ProcessId": 44472,
+        "StartMode": "Automatic",
+        "PathName": "/usr/libexec/routined"
+      },
+      {
+        "Name": "application.com.google.Chrome.67372.22452566",
+        "DisplayName": "application.com.google.Chrome.67372.22452566",
+        "ProcessId": 32077,
+        "StartMode": "Unknown",
+        "PathName": "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
+      },
+      {
+        "Name": "com.apple.siriactionsd",
+        "DisplayName": "com.apple.siriactionsd",
+        "ProcessId": 74576,
+        "StartMode": "Manual",
+        "PathName": "/System/Library/PrivateFrameworks/VoiceShortcuts.framework/Versions/A/Support/siriactionsd"
+      },
+      {
+        "Name": "com.apple.BiomeAgent",
+        "DisplayName": "com.apple.BiomeAgent",
+        "ProcessId": 413,
+        "StartMode": "Manual",
+        "PathName": "/System/Library/PrivateFrameworks/BiomeStreams.framework/Support/BiomeAgent"
+      },
+      {
+        "Name": "com.apple.pbs",
+        "DisplayName": "com.apple.pbs",
+        "ProcessId": 74711,
+        "StartMode": "Manual",
+        "PathName": "/System/Library/CoreServices/pbs"
+      },
+      {
+        "Name": "com.apple.notificationcenterui.agent",
+        "DisplayName": "com.apple.notificationcenterui.agent",
+        "ProcessId": 478,
+        "StartMode": "Unknown",
+        "PathName": "/System/Library/CoreServices/NotificationCenter.app/Contents/MacOS/NotificationCenter"
+      },
+      {
+        "Name": "com.apple.imklaunchagent",
+        "DisplayName": "com.apple.imklaunchagent",
+        "ProcessId": 493,
+        "StartMode": "Automatic",
+        "PathName": "/System/Library/Frameworks/InputMethodKit.framework/Resources/imklaunchagent"
+      },
+      {
+        "Name": "com.apple.FileProvider",
+        "DisplayName": "com.apple.FileProvider",
+        "ProcessId": 74578,
+        "StartMode": "Manual",
+        "PathName": "/System/Library/PrivateFrameworks/FileProvider.framework/Support/fileproviderd"
+      },
+      {
+        "Name": "application.com.apple.Passwords.1152921500311894659.1152921500311894686",
+        "DisplayName": "application.com.apple.Passwords.1152921500311894659.1152921500311894686",
+        "ProcessId": 10893,
+        "StartMode": "Unknown",
+        "PathName": "/System/Applications/Passwords.app/Contents/MacOS/Passwords"
+      },
+      {
+        "Name": "com.apple.icdd",
+        "DisplayName": "com.apple.icdd",
+        "ProcessId": 557,
+        "StartMode": "Automatic",
+        "PathName": "/System/Library/Image Capture/Support/icdd"
+      },
+      {
+        "Name": "com.apple.metadata.mdwrite",
+        "DisplayName": "com.apple.metadata.mdwrite",
+        "ProcessId": 38482,
+        "StartMode": "Manual",
+        "PathName": "/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdwrite"
+      },
+      {
+        "Name": "net.whatsapp.WhatsApp-sparkle-progress",
+        "DisplayName": "net.whatsapp.WhatsApp-sparkle-progress",
+        "ProcessId": 12277,
+        "StartMode": "Unknown",
+        "PathName": "/Users/sankalp/Library/Caches/net.whatsapp.WhatsApp/org.sparkle-project.Sparkle/Launcher/SsiFzjZmt/Updater.app/Contents/MacOS/Updater"
+      },
+      {
+        "Name": "com.apple.powerchime",
+        "DisplayName": "com.apple.powerchime",
+        "ProcessId": 5318,
+        "StartMode": "Manual",
+        "PathName": "/System/Library/CoreServices/PowerChime.app/Contents/MacOS/PowerChime"
+      },
+      {
+        "Name": "com.apple.sharingd",
+        "DisplayName": "com.apple.sharingd",
+        "ProcessId": 494,
+        "StartMode": "Automatic",
+        "PathName": "/usr/libexec/sharingd"
+      },
+      {
+        "Name": "com.apple.familycircled",
+        "DisplayName": "com.apple.familycircled",
+        "ProcessId": 584,
+        "StartMode": "Manual",
+        "PathName": "/System/Library/PrivateFrameworks/FamilyCircle.framework/Versions/A/Resources/familycircled"
+      },
+      {
+        "Name": "com.apple.imagent",
+        "DisplayName": "com.apple.imagent",
+        "ProcessId": 564,
+        "StartMode": "Manual",
+        "PathName": "/System/Library/PrivateFrameworks/IMCore.framework/imagent.app/Contents/MacOS/imagent"
+      },
+      {
+        "Name": "com.apple.photoanalysisd",
+        "DisplayName": "com.apple.photoanalysisd",
+        "ProcessId": 74667,
+        "StartMode": "Manual",
+        "PathName": "/System/Library/PrivateFrameworks/PhotoAnalysis.framework/Versions/A/Support/photoanalysisd"
+      },
+      {
+        "Name": "com.apple.imautomatichistorydeletionagent",
+        "DisplayName": "com.apple.imautomatichistorydeletionagent",
+        "ProcessId": 11921,
+        "StartMode": "Manual",
+        "PathName": "/System/Library/PrivateFrameworks/IMDPersistence.framework/IMAutomaticHistoryDeletionAgent.app/Contents/MacOS/IMAutomaticHistoryDeletionAgent"
+      },
+      {
+        "Name": "com.apple.SystemUIServer.agent",
+        "DisplayName": "com.apple.SystemUIServer.agent",
+        "ProcessId": 424,
+        "StartMode": "Unknown",
+        "PathName": "/System/Library/CoreServices/SystemUIServer.app/Contents/MacOS/SystemUIServer"
+      },
+      {
+        "Name": "com.apple.talagent",
+        "DisplayName": "com.apple.talagent",
+        "ProcessId": 74696,
+        "StartMode": "Manual",
+        "PathName": "/System/Library/CoreServices/talagentd"
+      },
+      {
+        "Name": "com.apple.suggestd",
+        "DisplayName": "com.apple.suggestd",
+        "ProcessId": 81088,
+        "StartMode": "Manual",
+        "PathName": "/System/Library/PrivateFrameworks/CoreSuggestions.framework/Versions/A/Support/suggestd"
+      },
+      {
+        "Name": "com.apple.swtransparencyd",
+        "DisplayName": "com.apple.swtransparencyd",
+        "ProcessId": 74619,
+        "StartMode": "Manual",
+        "PathName": "/usr/libexec/swtransparencyd"
+      },
+      {
+        "Name": "com.apple.usernotificationsd",
+        "DisplayName": "com.apple.usernotificationsd",
+        "ProcessId": 438,
+        "StartMode": "Manual",
+        "PathName": "/System/Library/PrivateFrameworks/UserNotificationsCore.framework/Support/usernotificationsd"
+      },
+      {
+        "Name": "com.apple.spotlightknowledged.importer",
+        "DisplayName": "com.apple.spotlightknowledged.importer",
+        "ProcessId": 1418,
+        "StartMode": "Manual",
+        "PathName": "/System/Library/Frameworks/CoreSpotlight.framework/spotlightknowledged"
+      },
+      {
+        "Name": "com.apple.secd",
+        "DisplayName": "com.apple.secd",
+        "ProcessId": 429,
+        "StartMode": "Manual",
+        "PathName": "/usr/libexec/secd"
+      },
+      {
+        "Name": "com.apple.hiservices-xpcservice",
+        "DisplayName": "com.apple.hiservices-xpcservice",
+        "ProcessId": 43513,
+        "StartMode": "Unknown",
+        "PathName": "/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/HIServices.framework/Versions/A/XPCServices/com.apple.hiservices-xpcservice.xpc/Contents/MacOS/com.apple.hiservices-xpcservice"
+      },
+      {
+        "Name": "com.apple.assistantd",
+        "DisplayName": "com.apple.assistantd",
+        "ProcessId": 44424,
+        "StartMode": "Manual",
+        "PathName": "/System/Library/PrivateFrameworks/AssistantServices.framework/Versions/A/Support/assistantd"
+      },
+      {
+        "Name": "com.apple.siriinferenced",
+        "DisplayName": "com.apple.siriinferenced",
+        "ProcessId": 541,
+        "StartMode": "Manual",
+        "PathName": "/System/Library/PrivateFrameworks/SiriInference.framework/Versions/A/siriinferenced"
+      },
+      {
+        "Name": "com.apple.videoconference.camera",
+        "DisplayName": "com.apple.videoconference.camera",
+        "ProcessId": 1038,
+        "StartMode": "Unknown",
+        "PathName": "/usr/libexec/avconferenced"
+      },
+      {
+        "Name": "com.apple.uikitsystemapp",
+        "DisplayName": "com.apple.uikitsystemapp",
+        "ProcessId": 631,
+        "StartMode": "Manual",
+        "PathName": "/System/Library/CoreServices/UIKitSystem.app/Contents/MacOS/UIKitSystem"
+      },
+      {
+        "Name": "com.apple.findmy.findmylocateagent",
+        "DisplayName": "com.apple.findmy.findmylocateagent",
+        "ProcessId": 74595,
+        "StartMode": "Manual",
+        "PathName": "/usr/libexec/findmylocateagent"
+      },
+      {
+        "Name": "com.apple.mediaanalysisd",
+        "DisplayName": "com.apple.mediaanalysisd",
+        "ProcessId": 74647,
+        "StartMode": "Manual",
+        "PathName": "/System/Library/PrivateFrameworks/MediaAnalysis.framework/Versions/A/mediaanalysisd"
+      },
+      {
+        "Name": "application.com.apple.Safari.370892.371691",
+        "DisplayName": "application.com.apple.Safari.370892.371691",
+        "ProcessId": 20807,
+        "StartMode": "Unknown",
+        "PathName": "/System/Volumes/Preboot/Cryptexes/App/System/Applications/Safari.app/Contents/MacOS/Safari"
+      },
+      {
+        "Name": "com.apple.scopedbookmarksagent.xpc",
+        "DisplayName": "com.apple.scopedbookmarksagent.xpc",
+        "ProcessId": 74649,
+        "StartMode": "Unknown",
+        "PathName": "/System/Library/CoreServices/ScopedBookmarkAgent"
+      },
+      {
+        "Name": "application.com.microsoft.VSCode.20935198.20935204.92E917AE-A184-4EFC-AB63-BC0103724E44",
+        "DisplayName": "application.com.microsoft.VSCode.20935198.20935204.92E917AE-A184-4EFC-AB63-BC0103724E44",
+        "ProcessId": 19510,
+        "StartMode": "Unknown",
+        "PathName": "/Applications/Visual Studio Code.app/Contents/MacOS/Electron"
+      },
+      {
+        "Name": "com.apple.donotdisturbd",
+        "DisplayName": "com.apple.donotdisturbd",
+        "ProcessId": 74594,
+        "StartMode": "Manual",
+        "PathName": "/System/Library/PrivateFrameworks/DoNotDisturbServer.framework/Support/donotdisturbd"
+      },
+      {
+        "Name": "com.apple.knowledge-agent",
+        "DisplayName": "com.apple.knowledge-agent",
+        "ProcessId": 57993,
+        "StartMode": "Automatic",
+        "PathName": "/usr/libexec/knowledge-agent"
+      },
+      {
+        "Name": "com.apple.AccessibilityUIServer",
+        "DisplayName": "com.apple.AccessibilityUIServer",
+        "ProcessId": 433,
+        "StartMode": "Unknown",
+        "PathName": "/System/Library/CoreServices/AccessibilityUIServer.app/Contents/MacOS/AccessibilityUIServer"
+      },
+      {
+        "Name": "com.apple.communicationtrustd",
+        "DisplayName": "com.apple.communicationtrustd",
+        "ProcessId": 74588,
+        "StartMode": "Manual",
+        "PathName": "/System/Library/PrivateFrameworks/CommunicationTrust.framework/Support/communicationtrustd"
+      },
+      {
+        "Name": "com.apple.wifi.WiFiAgent",
+        "DisplayName": "com.apple.wifi.WiFiAgent",
+        "ProcessId": 470,
+        "StartMode": "Manual",
+        "PathName": "/System/Library/CoreServices/WiFiAgent.app/Contents/MacOS/WiFiAgent"
+      },
+      {
+        "Name": "com.apple.passd",
+        "DisplayName": "com.apple.passd",
+        "ProcessId": 10867,
+        "StartMode": "Manual",
+        "PathName": "/System/Library/PrivateFrameworks/PassKitCore.framework/passd"
+      },
+      {
+        "Name": "com.apple.sociallayerd",
+        "DisplayName": "com.apple.sociallayerd",
+        "ProcessId": 74548,
+        "StartMode": "Manual",
+        "PathName": "/System/Library/PrivateFrameworks/SocialLayer.framework/sociallayerd.app/Contents/MacOS/sociallayerd"
+      },
+      {
+        "Name": "com.apple.mdworker.shared.09000000-0700-0000-0000-000000000000",
+        "DisplayName": "com.apple.mdworker.shared.09000000-0700-0000-0000-000000000000",
+        "ProcessId": 74939,
+        "StartMode": "Unknown",
+        "PathName": "/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared"
+      },
+      {
+        "Name": "com.apple.mdworker.shared.08000000-0600-0000-0000-000000000000",
+        "DisplayName": "com.apple.mdworker.shared.08000000-0600-0000-0000-000000000000",
+        "ProcessId": 74781,
+        "StartMode": "Unknown",
+        "PathName": "/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared"
+      },
+      {
+        "Name": "com.apple.CoreAuthentication.agent",
+        "DisplayName": "com.apple.CoreAuthentication.agent",
+        "ProcessId": 489,
+        "StartMode": "Manual",
+        "PathName": "/System/Library/Frameworks/LocalAuthentication.framework/Support/coreauthd"
+      },
+      {
+        "Name": "com.apple.syncdefaultsd",
+        "DisplayName": "com.apple.syncdefaultsd",
+        "ProcessId": 46418,
+        "StartMode": "Manual",
+        "PathName": "/System/Library/PrivateFrameworks/SyncedDefaults.framework/Support/syncdefaultsd"
+      },
+      {
+        "Name": "com.apple.chronod",
+        "DisplayName": "com.apple.chronod",
+        "ProcessId": 78424,
+        "StartMode": "Manual",
+        "PathName": "/System/Library/PrivateFrameworks/ChronoCore.framework/Support/chronod"
+      },
+      {
+        "Name": "com.apple.corespeechd",
+        "DisplayName": "com.apple.corespeechd",
+        "ProcessId": 548,
+        "StartMode": "Automatic",
+        "PathName": "/System/Library/PrivateFrameworks/CoreSpeech.framework/corespeechd"
+      },
+      {
+        "Name": "application.com.googlecode.iterm2.20322097.20322115",
+        "DisplayName": "application.com.googlecode.iterm2.20322097.20322115",
+        "ProcessId": 32620,
+        "StartMode": "Unknown",
+        "PathName": "/Applications/iTerm.app/Contents/MacOS/iTerm2"
+      },
+      {
+        "Name": "com.apple.security.keychain-circle-notification",
+        "DisplayName": "com.apple.security.keychain-circle-notification",
+        "ProcessId": 74602,
+        "StartMode": "Manual",
+        "PathName": "/System/Library/CoreServices/Keychain Circle Notification.app/Contents/MacOS/Keychain Circle Notification"
+      },
+      {
+        "Name": "application.org.p0deje.Maccy.876411.876417",
+        "DisplayName": "application.org.p0deje.Maccy.876411.876417",
+        "ProcessId": 511,
+        "StartMode": "Unknown",
+        "PathName": "/Applications/Maccy.app/Contents/MacOS/Maccy"
+      },
+      {
+        "Name": "com.lwouis.alt-tab-macos",
+        "DisplayName": "com.lwouis.alt-tab-macos",
+        "ProcessId": 555,
+        "StartMode": "Automatic",
+        "PathName": "/Applications/AltTab.app/Contents/MacOS/AltTab"
+      },
+      {
+        "Name": "com.apple.universalaccessd",
+        "DisplayName": "com.apple.universalaccessd",
+        "ProcessId": 409,
+        "StartMode": "Automatic",
+        "PathName": "/usr/sbin/universalaccessd"
+      },
+      {
+        "Name": "com.apple.linkd",
+        "DisplayName": "com.apple.linkd",
+        "ProcessId": 29787,
+        "StartMode": "Manual",
+        "PathName": "/usr/libexec/linkd"
+      },
+      {
+        "Name": "com.apple.spotlightknowledged.updater",
+        "DisplayName": "com.apple.spotlightknowledged.updater",
+        "ProcessId": 13020,
+        "StartMode": "Manual",
+        "PathName": "/System/Library/Frameworks/CoreSpotlight.framework/spotlightknowledged"
+      },
+      {
+        "Name": "com.apple.usernoted",
+        "DisplayName": "com.apple.usernoted",
+        "ProcessId": 427,
+        "StartMode": "Automatic",
+        "PathName": "/usr/sbin/usernoted"
+      },
+      {
+        "Name": "com.apple.geodMachServiceBridge",
+        "DisplayName": "com.apple.geodMachServiceBridge",
+        "ProcessId": 74652,
+        "StartMode": "Manual",
+        "PathName": "/System/Library/PrivateFrameworks/GeoServices.framework/geodMachServiceBridge"
+      },
+      {
+        "Name": "com.apple.Safari.History",
+        "DisplayName": "com.apple.Safari.History",
+        "ProcessId": 74615,
+        "StartMode": "Manual",
+        "PathName": "/System/Cryptexes/App/usr/libexec/com.apple.Safari.History"
+      },
+      {
+        "Name": "com.apple.calaccessd",
+        "DisplayName": "com.apple.calaccessd",
+        "ProcessId": 74587,
+        "StartMode": "Manual",
+        "PathName": "/System/Library/PrivateFrameworks/CalendarDaemon.framework/Support/calaccessd"
+      },
+      {
+        "Name": "homebrew.mxcl.mariadb@10.6",
+        "DisplayName": "homebrew.mxcl.mariadb@10.6",
+        "ProcessId": 560,
+        "StartMode": "Automatic",
+        "PathName": "/opt/homebrew/opt/mariadb@10.6/bin/mysqld_safe"
+      },
+      {
+        "Name": "com.apple.AirPlayUIAgent",
+        "DisplayName": "com.apple.AirPlayUIAgent",
+        "ProcessId": 563,
+        "StartMode": "Automatic",
+        "PathName": "/System/Library/CoreServices/AirPlayUIAgent.app/Contents/MacOS/AirPlayUIAgent"
+      },
+      {
+        "Name": "com.apple.corespotlightd",
+        "DisplayName": "com.apple.corespotlightd",
+        "ProcessId": 457,
+        "StartMode": "Manual",
+        "PathName": "/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/corespotlightd"
+      },
+      {
+        "Name": "com.apple.xtyped",
+        "DisplayName": "com.apple.xtyped",
+        "ProcessId": 461,
+        "StartMode": "Unknown",
+        "PathName": "/System/Library/Frameworks/ApplicationServices.framework/Frameworks/ATS.framework/Support/fontd"
+      },
+      {
+        "Name": "com.apple.Spotlight",
+        "DisplayName": "com.apple.Spotlight",
+        "ProcessId": 488,
+        "StartMode": "Manual",
+        "PathName": "/System/Library/CoreServices/Spotlight.app/Contents/MacOS/Spotlight"
+      },
+      {
+        "Name": "com.apple.accessibility.mediaaccessibilityd",
+        "DisplayName": "com.apple.accessibility.mediaaccessibilityd",
+        "ProcessId": 74951,
+        "StartMode": "Unknown",
+        "PathName": "/System/Library/Frameworks/MediaAccessibility.framework/Versions/A/XPCServices/com.apple.accessibility.mediaaccessibilityd.xpc/Contents/MacOS/com.apple.accessibility.mediaaccessibilityd"
+      },
+      {
+        "Name": "com.apple.metadata.mdbulkimport",
+        "DisplayName": "com.apple.metadata.mdbulkimport",
+        "ProcessId": 1163,
+        "StartMode": "Manual",
+        "PathName": "/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdbulkimport"
+      },
+      {
+        "Name": "com.apple.WorkflowKit.ShortcutsViewService",
+        "DisplayName": "com.apple.WorkflowKit.ShortcutsViewService",
+        "ProcessId": 74603,
+        "StartMode": "Unknown",
+        "PathName": "/System/Library/PrivateFrameworks/WorkflowKit.framework/XPCServices/ShortcutsViewService.xpc/Contents/MacOS/ShortcutsViewService"
+      },
+      {
+        "Name": "com.apple.contactsd",
+        "DisplayName": "com.apple.contactsd",
+        "ProcessId": 45789,
+        "StartMode": "Manual",
+        "PathName": "/System/Library/Frameworks/Contacts.framework/Support/contactsd"
+      },
+      {
+        "Name": "com.apple.distnoted.xpc.agent",
+        "DisplayName": "com.apple.distnoted.xpc.agent",
+        "ProcessId": 397,
+        "StartMode": "Automatic",
+        "PathName": "/usr/sbin/distnoted"
+      },
+      {
+        "Name": "com.apple.mdworker.shared.0E000000-0400-0000-0000-000000000000",
+        "DisplayName": "com.apple.mdworker.shared.0E000000-0400-0000-0000-000000000000",
+        "ProcessId": 74940,
+        "StartMode": "Unknown",
+        "PathName": "/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared"
+      },
+      {
+        "Name": "com.apple.geod",
+        "DisplayName": "com.apple.geod",
+        "ProcessId": 74629,
+        "StartMode": "Unknown",
+        "PathName": "/System/Library/PrivateFrameworks/GeoServices.framework/Versions/A/XPCServices/com.apple.geod.xpc/Contents/MacOS/com.apple.geod"
+      }
+    ]
+  }
+]

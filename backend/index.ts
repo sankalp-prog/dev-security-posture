@@ -29,12 +29,6 @@ import helpDownloadRoutes from "./routes/helpDownload.routes";
 // Load env variables
 dotenv.config();
 
-// Debug: Check if env variables are loaded
-console.log("🔍 Environment variables loaded:");
-console.log("PORT:", process.env.PORT);
-console.log("DOWNLOAD_WINDOWS_SCRIPT:", process.env.DOWNLOAD_WINDOWS_SCRIPT);
-console.log("DOWNLOAD_LINUX_SCRIPT:", process.env.DOWNLOAD_LINUX_SCRIPT);
-
 const app = express();
 // const PORT = process.env.PORT || 5000;
 const PORT: number = Number(process.env.PORT) || 5000;

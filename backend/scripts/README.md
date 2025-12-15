@@ -4,39 +4,91 @@ This folder contains platform-specific enumeration scripts for client systems.
 
 ## Files
 
-- **`windows_enumeration.exe`** - Windows enumeration executable (currently a dummy placeholder)
-- **`linux_enumeration.sh`** - Linux enumeration shell script (currently a dummy placeholder)
+- **`windows_dev_scan.exe`** - Windows enumeration executable (placeholder)
+- **`linux_dev_scan.sh`** - Linux enumeration shell script (placeholder)
+- **`macos_dev_scan.sh`** - macOS enumeration shell script ✅ **WORKING**
 
-## Production Setup
+## macOS Script (macos_dev_scan.sh)
 
-Replace these dummy files with actual enumeration scripts that:
+### What It Does
+Collects detailed running services on macOS (equivalent to Windows `Get-CimInstance Win32_Service`):
+- **Name** - Service identifier (launchd label)
+- **DisplayName** - Human-readable service name
+- **ProcessId** - Running process ID
+- **StartMode** - Automatic or Manual
+- **PathName** - Executable path
 
-1. Collect installed applications
-2. Gather network configuration (including MAC address)
-3. Collect system information
-4. POST collected data to `/api/help-download/postData` endpoint
+### How to Use
 
-## Expected Data Format
+**1. Download the script from the web app:**
+- Visit the Help/Download page
+- Click "Download Script" (auto-detects macOS)
 
-The scripts should send JSON data with this structure:
+**2. Run the script:**
+```bash
+# Make executable (if not already)
+chmod +x macos_dev_scan.sh
 
+# Run with default server (http://127.0.0.1:4000)
+./macos_dev_scan.sh
+
+# Or specify custom server URL
+SERVER_URL="http://your-server.com/api/help-download/postData" ./macos_dev_scan.sh
+```
+
+### Output Example
 ```json
 [
   {
-    "addresses": {
-      "mac_address": "aa:bb:cc:dd:ee:ff",
-      "last_updated_timestamp": 1702650000
-    },
-    "system_info": {
-      "os": "Windows 10",
-      "hostname": "DESKTOP-ABC123"
-    },
-    "app_list": [
-      {
-        "name": "Application Name",
-        "version": "1.0.0"
-      }
-    ]
+    "Name": "com.apple.WindowServer",
+    "DisplayName": "com.apple.WindowServer",
+    "ProcessId": 123,
+    "StartMode": "Automatic",
+    "PathName": "/System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer"
+  },
+  {
+    "Name": "com.apple.Finder",
+    "DisplayName": "com.apple.Finder",
+    "ProcessId": 456,
+    "StartMode": "Automatic",
+    "PathName": "/System/Library/CoreServices/Finder.app/Contents/MacOS/Finder"
   }
 ]
+```
+
+### Script Behavior
+1. Collects all running launchd services (system + user)
+2. Parses service details from `.plist` files in:
+   - `/System/Library/LaunchDaemons`
+   - `/System/Library/LaunchAgents`
+   - `/Library/LaunchDaemons`
+   - `/Library/LaunchAgents`
+   - `~/Library/LaunchAgents`
+3. Converts to JSON matching Windows service structure
+4. POSTs to backend endpoint automatically
+5. Shows success/failure message
+
+## Windows & Linux Scripts
+
+These are currently placeholder files. Replace with actual enumeration scripts that:
+
+1. Collect detailed running services
+2. Convert to JSON (same format as macOS script)
+3. POST collected data to `/api/help-download/postData` endpoint
+
+### Windows PowerShell Example
+```powershell
+# Collect running services
+$services = Get-CimInstance Win32_Service |
+    Where-Object { $_.State -eq "Running" } |
+    Select-Object Name, DisplayName, ProcessId, StartMode, PathName
+
+# Convert to JSON
+$json = $services | ConvertTo-Json -Depth 10
+
+# Send to server
+curl -X POST `
+     -H "Content-Type: application/json" `
+     --data-binary $json `
+     "http://127.0.0.1:4000/api/help-download/postData"
 ```

@@ -40,18 +40,31 @@ export const downloadScript = async (
     }
 
     let filePath: string;
+    const osLower = os.toLowerCase();
 
-    if (os.toLowerCase() === "windows") {
+    if (osLower === "windows") {
       filePath = process.env.DOWNLOAD_WINDOWS_SCRIPT || "";
-    } else if (os.toLowerCase() === "linux") {
+    } else if (osLower === "linux") {
       filePath = process.env.DOWNLOAD_LINUX_SCRIPT || "";
+    } else if (
+      osLower === "mac os" ||
+      osLower === "macos" ||
+      osLower.includes("mac")
+    ) {
+      filePath = process.env.DOWNLOAD_MACOS_SCRIPT || "";
     } else {
-      res.status(400).json({ error: "Invalid OS type" });
+      // Actual response -
+      // res.status(400).json({ error: `Invalid OS type: ${os}` });
+      // Debugging response -
+      console.log(`Invalid OS type: ${os}`);
+      res.status(400).json({ error: `Invalid OS type: ${os}` });
       return;
     }
 
     if (!filePath) {
-      res.status(500).json({ error: "Script path not configured in environment" });
+      res
+        .status(500)
+        .json({ error: "Script path not configured in environment" });
       return;
     }
 
@@ -131,7 +144,9 @@ export const postData = async (req: Request, res: Response): Promise<void> => {
 
     const APP_DATA = process.env.APP_DATA_FILE || "";
     if (!APP_DATA) {
-      res.status(500).json({ error: "APP_DATA_FILE path not configured in environment" });
+      res
+        .status(500)
+        .json({ error: "APP_DATA_FILE path not configured in environment" });
       return;
     }
 
