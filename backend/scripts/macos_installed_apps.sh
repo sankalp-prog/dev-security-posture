@@ -1,176 +1,199 @@
-#!/bin/bash
+#!/usr/bin/env bash
+set -u
 
-# macOS Installed Applications Enumeration Script
-# Scans /Applications, ~/Applications, and /System/Applications for installed apps
-# Collects: Name, Version, BundleIdentifier, Path, Size
+API_URL="http://127.0.0.1:4000/api/help-download/postData"
+LSREGISTER="/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister"
 
-# Configuration
-SERVER_URL="${SERVER_URL:-http://127.0.0.1:4000/api/help-download/postData}"
+echo "▶ Collecting system metadata..."
 
-echo "========================================="
-echo "   macOS Installed Apps Enumeration"
-echo "========================================="
-echo ""
-echo "Collecting installed applications..."
-echo ""
-
-# Collect installed applications
-collect_installed_apps() {
-    apps_json="["
-    first=true
-
-    # Search for .app bundles in common locations
-    app_dirs=(
-        "/Applications"
-        "/System/Applications"
-        "$HOME/Applications"
-        "/System/Library/CoreServices"
-    )
-
-    for app_dir in "${app_dirs[@]}"; do
-        if [ ! -d "$app_dir" ]; then
-            continue
-        fi
-
-        # Find all .app bundles in this directory (not recursive beyond .app)
-        while IFS= read -r app_path; do
-            if [ ! -d "$app_path" ]; then
-                continue
-            fi
-
-            # Get app name (remove .app extension)
-            app_name=$(basename "$app_path" .app)
-
-            # Try to read Info.plist
-            info_plist="$app_path/Contents/Info.plist"
-
-            # Initialize variables
-            bundle_id=""
-            version=""
-            display_name="$app_name"
-
-            if [ -f "$info_plist" ]; then
-                # Get bundle identifier
-                bundle_id=$(/usr/libexec/PlistBuddy -c "Print :CFBundleIdentifier" "$info_plist" 2>/dev/null || echo "")
-
-                # Get version (try multiple version keys)
-                version=$(/usr/libexec/PlistBuddy -c "Print :CFBundleShortVersionString" "$info_plist" 2>/dev/null || \
-                         /usr/libexec/PlistBuddy -c "Print :CFBundleVersion" "$info_plist" 2>/dev/null || \
-                         echo "Unknown")
-
-                # Get display name
-                display_name=$(/usr/libexec/PlistBuddy -c "Print :CFBundleDisplayName" "$info_plist" 2>/dev/null || \
-                              /usr/libexec/PlistBuddy -c "Print :CFBundleName" "$info_plist" 2>/dev/null || \
-                              echo "$app_name")
-            fi
-
-            # Get app size (in MB)
-            app_size=$(du -sm "$app_path" 2>/dev/null | awk '{print $1}')
-            if [ -z "$app_size" ]; then
-                app_size="0"
-            fi
-
-            # Build JSON object
-            if [ "$first" = true ]; then
-                first=false
-            else
-                apps_json+=","
-            fi
-
-            # Escape quotes in strings
-            name_escaped=$(echo "$display_name" | sed 's/"/\\"/g')
-            bundle_id_escaped=$(echo "$bundle_id" | sed 's/"/\\"/g')
-            version_escaped=$(echo "$version" | sed 's/"/\\"/g')
-            path_escaped=$(echo "$app_path" | sed 's/"/\\"/g')
-
-            apps_json+=$(cat <<EOF
-{
-  "Name": "$name_escaped",
-  "BundleIdentifier": "$bundle_id_escaped",
-  "Version": "$version_escaped",
-  "Path": "$path_escaped",
-  "SizeMB": $app_size
-}
-EOF
-)
-        done < <(find "$app_dir" -maxdepth 1 -name "*.app" 2>/dev/null)
-    done
-
-    apps_json+="]"
-    echo "$apps_json"
-}
-
-# Get MAC Address
-get_mac_address() {
-    # Try to get MAC from en0 (usually primary interface)
-    mac=$(ifconfig en0 2>/dev/null | awk '/ether/{print $2}')
-
-    # If en0 doesn't exist, try en1
-    if [ -z "$mac" ]; then
-        mac=$(ifconfig en1 2>/dev/null | awk '/ether/{print $2}')
-    fi
-
-    # Fallback to any interface
-    if [ -z "$mac" ]; then
-        mac=$(ifconfig | grep -m1 'ether' | awk '{print $2}')
-    fi
-
-    echo "$mac"
-}
-
-# Collect the apps data
-APPS_JSON=$(collect_installed_apps)
-
-# Get MAC address
-MAC_ADDRESS=$(get_mac_address)
-TIMESTAMP=$(date +%s)
-
-# Count apps
-APP_COUNT=$(echo "$APPS_JSON" | grep -o '"Name"' | wc -l | tr -d ' ')
-echo "Found $APP_COUNT installed applications"
-echo "MAC Address: $MAC_ADDRESS"
-echo "Timestamp: $TIMESTAMP"
-echo ""
-
-echo "Converting to JSON..."
-# Wrap apps in proper format with MAC address
-JSON_PAYLOAD=$(cat <<EOF
-[
-  {
-    "addresses": {
-      "mac_address": "$MAC_ADDRESS",
-      "last_updated_timestamp": $TIMESTAMP
-    },
-    "apps": $APPS_JSON
-  }
-]
-EOF
-)
-
-echo "Sending data to server: $SERVER_URL"
-echo ""
-
-# Send data via curl (using --data-binary to avoid truncation)
-response=$(curl -s -w "\n%{http_code}" -X POST \
-     -H "Content-Type: application/json" \
-     --data-binary "$JSON_PAYLOAD" \
-     "$SERVER_URL")
-
-# Parse response
-http_code=$(echo "$response" | tail -n1)
-response_body=$(echo "$response" | sed '$d')
-
-echo "========================================="
-if [ "$http_code" = "200" ]; then
-    echo "✅ SUCCESS: Data uploaded successfully!"
-    echo ""
-    echo "Server response:"
-    echo "$response_body" | python3 -m json.tool 2>/dev/null || echo "$response_body"
-else
-    echo "❌ ERROR: Failed to upload data"
-    echo "HTTP Status Code: $http_code"
-    echo ""
-    echo "Response:"
-    echo "$response_body"
+# Get MAC address (primary network interface)
+MAC_ADDRESS=$(ifconfig en0 2>/dev/null | awk '/ether/{print $2}')
+if [[ -z "$MAC_ADDRESS" ]]; then
+  # Fallback to first available interface with MAC
+  MAC_ADDRESS=$(ifconfig | awk '/ether/{print $2; exit}')
 fi
-echo "========================================="
+
+# Get timestamp in ISO 8601 format
+TIMESTAMP=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
+
+# Get hostname
+HOSTNAME=$(hostname)
+
+# Get macOS version
+MACOS_VERSION=$(sw_vers -productVersion)
+
+# Get hardware model
+HARDWARE_MODEL=$(sysctl -n hw.model)
+
+echo "✔ System metadata collected."
+echo "  - MAC Address: $MAC_ADDRESS"
+echo "  - Hostname: $HOSTNAME"
+echo "  - macOS Version: $MACOS_VERSION"
+echo "  - Timestamp: $TIMESTAMP"
+
+echo "▶ Collecting application data from Launch Services..."
+
+apps_data=$(
+  "$LSREGISTER" -dump |
+  awk '
+  BEGIN { 
+    reset()
+    in_bundle = 0
+  }
+  
+  function reset() {
+    path=""
+    directory=""
+    name=""
+    displayName=""
+    identifier=""
+    version=""
+    versionString=""
+    displayVersion=""
+    mod_date=""
+    reg_date=""
+  }
+  
+  # Detect separator line - emit previous bundle if it had a path
+  /^--------------------------------------------------------------------------------$/ {
+    if (in_bundle && path != "") {
+      emit()
+    }
+    reset()
+    in_bundle = 0
+    next
+  }
+  
+  # Start of new bundle
+  /^bundle id:/ {
+    in_bundle = 1
+    next
+  }
+  
+  # Only process fields if we are in a bundle section
+  in_bundle {
+    if (/^path:.*\.app/) {
+      sub(/^path:[ \t]+/, "")
+      sub(/ \(0x[0-9a-f]+\).*$/, "")
+      path=$0
+    }
+    else if (/^directory:/) {
+      sub(/^directory:[ \t]+/, "")
+      directory=$0
+    }
+    else if (/^name:/) {
+      sub(/^name:[ \t]+/, "")
+      name=$0
+    }
+    else if (/^displayName:/) {
+      sub(/^displayName:[ \t]+/, "")
+      displayName=$0
+    }
+    else if (/^identifier:/) {
+      sub(/^identifier:[ \t]+/, "")
+      identifier=$0
+    }
+    else if (/^version:/) {
+      sub(/^version:[ \t]+/, "")
+      sub(/ \({.*$/, "")
+      version=$0
+    }
+    else if (/^versionString:/) {
+      sub(/^versionString:[ \t]+/, "")
+      versionString=$0
+    }
+    else if (/^displayVersion:/) {
+      sub(/^displayVersion:[ \t]+/, "")
+      displayVersion=$0
+    }
+    else if (/^mod date:/) {
+      sub(/^mod date:[ \t]+/, "")
+      sub(/ \(POSIX.*$/, "")
+      mod_date=$0
+    }
+    else if (/^reg date:/) {
+      sub(/^reg date:[ \t]+/, "")
+      sub(/ \(POSIX.*$/, "")
+      reg_date=$0
+    }
+  }
+  
+  function emit() {
+    # Only emit if we have at least a path
+    if (path == "") return
+    
+    printf("{")
+    sep=""
+    if (name != "")           { printf("%s\"name\":\"%s\"", sep, name); sep="," }
+    if (displayName != "")    { printf("%s\"displayName\":\"%s\"", sep, displayName); sep="," }
+    if (identifier != "")     { printf("%s\"identifier\":\"%s\"", sep, identifier); sep="," }
+    if (path != "")           { printf("%s\"path\":\"%s\"", sep, path); sep="," }
+    if (directory != "")      { printf("%s\"directory\":\"%s\"", sep, directory); sep="," }
+    if (version != "")        { printf("%s\"version\":\"%s\"", sep, version); sep="," }
+    if (versionString != "")  { printf("%s\"versionString\":\"%s\"", sep, versionString); sep="," }
+    if (displayVersion != "") { printf("%s\"displayVersion\":\"%s\"", sep, displayVersion); sep="," }
+    if (mod_date != "")       { printf("%s\"mod date\":\"%s\"", sep, mod_date); sep="," }
+    if (reg_date != "")       { printf("%s\"reg date\":\"%s\"", sep, reg_date); sep="," }
+    printf("}\n")
+  }
+  
+  # Emit the last record at end of file
+  END {
+    if (in_bundle && path != "") {
+      emit()
+    }
+  }
+  ' |
+  jq -s '.'
+)
+
+if [[ -z "$apps_data" || "$apps_data" == "[]" ]]; then
+  echo "❌ Failed to extract application data."
+  echo "   Launch Services output was parsed but no app records were produced."
+  exit 1
+fi
+
+app_count=$(echo "$apps_data" | jq 'length')
+echo "✔ Application data collected ($app_count apps found)."
+
+# Construct final payload with metadata and apps
+echo "▶ Building payload with metadata..."
+
+payload=$(jq -n \
+  --arg mac "$MAC_ADDRESS" \
+  --arg timestamp "$TIMESTAMP" \
+  --arg hostname "$HOSTNAME" \
+  --arg macos_version "$MACOS_VERSION" \
+  --arg hardware_model "$HARDWARE_MODEL" \
+  --argjson apps "$apps_data" \
+  '{
+    metadata: {
+      mac_address: $mac,
+      timestamp: $timestamp,
+      hostname: $hostname,
+      macos_version: $macos_version,
+      hardware_model: $hardware_model,
+      app_count: ($apps | length)
+    },
+    apps: $apps
+  }'
+)
+
+echo "✔ Payload built successfully."
+echo "▶ Sending data to API..."
+
+http_code=$(curl -sS -o /dev/null -w "%{http_code}" \
+  -X POST "$API_URL" \
+  -H "Content-Type: application/json" \
+  -d "$payload")
+
+if [[ "$http_code" -ge 200 && "$http_code" -lt 300 ]]; then
+  echo "✅ Data successfully sent to $API_URL"
+  echo "   - MAC: $MAC_ADDRESS"
+  echo "   - Apps: $app_count"
+  echo "   - Timestamp: $TIMESTAMP"
+else
+  echo "❌ Failed to send data to $API_URL"
+  echo "   HTTP status code: $http_code"
+  exit 1
+fi

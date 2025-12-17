@@ -352,7 +352,7 @@ const DownloadTab = () => {
                       <div className="mt-2 ml-8 p-3 bg-gray-900 text-gray-100 rounded-md font-mono text-sm">
                         chmod +x{" "}
                         {os.toLowerCase().includes("mac")
-                          ? "macos_dev_scan.sh"
+                          ? "macos_installed_apps.sh"
                           : "linux_dev_scan.sh"}
                       </div>
                     </div>
@@ -373,7 +373,7 @@ const DownloadTab = () => {
                       <div className="mt-2 ml-8 p-3 bg-gray-900 text-gray-100 rounded-md font-mono text-sm">
                         ./
                         {os.toLowerCase().includes("mac")
-                          ? "macos_dev_scan.sh"
+                          ? "macos_installed_apps.sh"
                           : "linux_dev_scan.sh"}
                       </div>
                     </div>

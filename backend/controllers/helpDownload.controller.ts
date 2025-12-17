@@ -109,14 +109,21 @@ export const postData = async (req: Request, res: Response): Promise<void> => {
       return;
     }
 
-    // Safely extract MAC address
+    // Extract MAC address
     let macAddress = "unknownmac";
-    if (Array.isArray(data)) {
+
+    // New format: Check root level metadata first
+    if (data.metadata?.mac_address) {
+      macAddress = data.metadata.mac_address;
+    }
+    // Handle array of payloads
+    else if (Array.isArray(data)) {
       for (const item of data) {
-        if (item.addresses?.mac_address) {
-          macAddress = item.addresses.mac_address;
+        if (item.metadata?.mac_address) {
+          macAddress = item.metadata.mac_address;
           break;
         }
+        // Legacy format fallback
         if (item.app_list?.[0]?.mac_address) {
           macAddress = item.app_list[0].mac_address;
           break;
@@ -127,10 +134,25 @@ export const postData = async (req: Request, res: Response): Promise<void> => {
     // Clean MAC: remove non-alphanumeric, lowercase
     macAddress = macAddress.replace(/[^a-zA-Z0-9]/g, "").toLowerCase();
 
-    // Safely extract timestamp
+    // Extract timestamp
     let timestamp = Date.now().toString();
-    if (Array.isArray(data)) {
+    let isoTimestamp = new Date().toISOString();
+
+    // New format: Check root level metadata first
+    if (data.metadata?.timestamp) {
+      isoTimestamp = data.metadata.timestamp;
+      // Convert ISO timestamp to Unix timestamp for filename
+      timestamp = new Date(data.metadata.timestamp).getTime().toString();
+    }
+    // Handle array of payloads
+    else if (Array.isArray(data)) {
       for (const item of data) {
+        if (item.metadata?.timestamp) {
+          isoTimestamp = item.metadata.timestamp;
+          timestamp = new Date(item.metadata.timestamp).getTime().toString();
+          break;
+        }
+        // Legacy format fallbacks
         if (item.addresses?.last_updated_timestamp) {
           timestamp = item.addresses.last_updated_timestamp.toString();
           break;
@@ -141,6 +163,26 @@ export const postData = async (req: Request, res: Response): Promise<void> => {
         }
       }
     }
+
+    // Log received data info
+    console.log(`[INFO] Received data from MAC: ${macAddress}`);
+    console.log(`[INFO] Timestamp: ${isoTimestamp}`);
+    console.log(
+      `[INFO] Hostname: ${data.metadata?.hostname || "not provided"}`
+    );
+    console.log(
+      `[INFO] macOS Version: ${data.metadata?.macos_version || "not provided"}`
+    );
+    console.log(
+      `[INFO] Hardware Model: ${
+        data.metadata?.hardware_model || "not provided"
+      }`
+    );
+    console.log(
+      `[INFO] App count: ${
+        data.metadata?.app_count || data.apps?.length || "unknown"
+      }`
+    );
 
     const APP_DATA = process.env.APP_DATA_FILE || "";
     if (!APP_DATA) {
@@ -161,9 +203,18 @@ export const postData = async (req: Request, res: Response): Promise<void> => {
     // Write file
     fs.writeFileSync(filePath, JSON.stringify(data, null, 2));
 
-    res.status(200).json({ message: "Data saved successfully", filePath });
+    console.log(`[SUCCESS] Data saved to: ${filePath}`);
+
+    res.status(200).json({
+      success: true,
+      message: "Data saved successfully",
+      filePath,
+      mac_address: macAddress,
+      timestamp: isoTimestamp,
+      app_count: data.metadata?.app_count || data.apps?.length || 0,
+    });
   } catch (error: any) {
-    console.error("Error in postData:", error);
+    console.error("[ERROR] Failed to save data:", error);
     res.status(500).json({
       error: "Failed to save data",
       details: error.message,
