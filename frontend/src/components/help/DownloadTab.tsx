@@ -12,7 +12,9 @@ import { Download, FileText, Play } from "lucide-react";
 import { useToast } from "@/components/ui/use-toast";
 import CircularProgress from "@/components/ui/CircularProgress"; // <- make sure you have this component
 
-const API_BASE = import.meta.env.VITE_API_BASE_URL;
+// Use env variable if set (production), otherwise auto-detect from current host (development)
+const API_BASE = import.meta.env.VITE_API_BASE_URL ||
+  `http://${window.location.hostname}:4000`;
 
 const DownloadTab = () => {
   const { toast } = useToast();
@@ -418,15 +420,13 @@ const DownloadTab = () => {
                           2
                         </span>
                         <span className="font-medium text-gray-900">
-                          Run as Administrator
+                          Open PowerShell as Administrator
                         </span>
                       </div>
                       <p className="text-sm text-gray-600 ml-8">
-                        Right-click the{" "}
-                        <code className="bg-gray-100 px-1 rounded">
-                          windows_dev_scan.exe
-                        </code>{" "}
-                        file and select <strong>"Run as administrator"</strong>
+                        Right-click the Start button, select{" "}
+                        <strong>"Windows PowerShell (Admin)"</strong> or{" "}
+                        <strong>"Terminal (Admin)"</strong>
                       </p>
                     </div>
 
@@ -436,13 +436,46 @@ const DownloadTab = () => {
                           3
                         </span>
                         <span className="font-medium text-gray-900">
-                          Allow Execution
+                          Navigate to Downloads
                         </span>
                       </div>
-                      <p className="text-sm text-gray-600 ml-8">
-                        If Windows Defender shows a warning, click{" "}
-                        <strong>"More info"</strong> then{" "}
-                        <strong>"Run anyway"</strong>
+                      <p className="text-sm text-gray-600 ml-8 mb-2">
+                        Change to your Downloads directory
+                      </p>
+                      <div className="ml-8 p-3 bg-gray-900 text-gray-100 rounded-md font-mono text-sm">
+                        cd $env:USERPROFILE\Downloads
+                      </div>
+                    </div>
+
+                    <div className="bg-white p-4 rounded-lg border border-blue-200">
+                      <div className="flex items-center gap-2 mb-2">
+                        <span className="flex items-center justify-center w-6 h-6 rounded-full bg-blue-600 text-white text-sm font-bold">
+                          4
+                        </span>
+                        <span className="font-medium text-gray-900">
+                          Run the Script
+                        </span>
+                      </div>
+                      <p className="text-sm text-gray-600 ml-8 mb-2">
+                        Execute the PowerShell script - it will automatically collect and upload data
+                      </p>
+                      <div className="ml-8 p-3 bg-gray-900 text-gray-100 rounded-md font-mono text-sm">
+                        .\windows_installed_apps.ps1
+                      </div>
+                    </div>
+
+                    <div className="bg-yellow-50 p-4 rounded-lg border border-yellow-200 mt-4">
+                      <p className="text-sm text-yellow-800 mb-2">
+                        <strong className="font-semibold">⚠️ If you get an execution policy error:</strong>
+                      </p>
+                      <p className="text-sm text-yellow-700 ml-4 mb-2">
+                        Run this command first to allow the script:
+                      </p>
+                      <div className="ml-4 p-3 bg-gray-900 text-gray-100 rounded-md font-mono text-sm">
+                        Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
+                      </div>
+                      <p className="text-sm text-yellow-700 ml-4 mt-2">
+                        Then run the script again with: <code className="bg-yellow-100 px-1 rounded">.\windows_installed_apps.ps1</code>
                       </p>
                     </div>
 
@@ -452,8 +485,8 @@ const DownloadTab = () => {
                         The script will automatically:
                       </p>
                       <ul className="text-sm text-green-700 mt-2 ml-4 space-y-1">
-                        <li>• Collect running services information</li>
-                        <li>• Convert data to JSON format</li>
+                        <li>• Collect installed applications (UWP & Win32)</li>
+                        <li>• Gather system metadata</li>
                         <li>• Upload results to the server</li>
                         <li>• Show you a success/failure message</li>
                       </ul>
